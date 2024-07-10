@@ -29,6 +29,36 @@
   ];
 
   stable-packages = with pkgs; [
+    autojump
+    cue
+    devbox
+    devpod
+    devspace
+    feh
+    guake
+    zf
+    fluxcd
+    file
+    firefox
+    go
+    gum
+    gnupg
+    gparted
+    kitty
+    k3d
+    k9s
+    kustomize
+    kompose
+    kubectl
+    krew
+    kubernetes-helm
+    source-code-pro
+    terminator
+    thefuck
+    timoni
+    velero
+    vscode
+
     # FIXME: customize these stable packages to your liking for the languages that you use
 
     # FIXME: you can add plugins, change keymaps etc using (jeezyvim.nixvimExtend {})
@@ -88,35 +118,6 @@ in {
     ++
     # FIXME: you can add anything else that doesn't fit into the above two lists in here
     [
-     autojump
-     cue
-     devbox
-     devpod
-     devspace
-     feh
-     guake
-     zf
-     fluxcd
-     file
-     firefox
-     go
-     gum
-     gnupg
-     gparted
-     kitty
-     k3d
-     k9s
-     kustomize
-     kompose
-     kubectl
-     krew
-     kubernetes-helm
-     source-code-pro
-     terminator
-     thefuck
-     timoni
-     velero
-     vscode
     ];
 
   programs = {
