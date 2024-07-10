@@ -91,7 +91,7 @@ wsl -d NixOS
 - Get a copy of this repo (you'll probably want to fork it eventually):
 
 ```bash
-git clone https://github.com/LGUG2Z/nixos-wsl-starter.git /tmp/configuration
+git clone git@github.com:klst9498/nixos-wsl-starter.git /tmp/configuration
 cd /tmp/configuration
 ```
 
