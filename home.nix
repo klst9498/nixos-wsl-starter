@@ -1,6 +1,4 @@
 {
-  # FIXME: uncomment the next line if you want to reference your GitHub/GitLab access tokens and other secrets
-  # secrets,
   pkgs,
   username,
   nix-index-database,
@@ -12,7 +10,6 @@
     bottom
     coreutils
     curl
-    du-dust
     fd
     findutils
     fx
@@ -20,8 +17,6 @@
     git-crypt
     htop
     jq
-    killall
-    mosh
     procs
     ripgrep
     sd
@@ -93,8 +88,35 @@ in {
     ++
     # FIXME: you can add anything else that doesn't fit into the above two lists in here
     [
-      # pkgs.some-package
-      # pkgs.unstable.some-other-package
+     autojump
+     cue
+     devbox
+     devpod
+     devspace
+     feh
+     guake
+     zf
+     fluxcd
+     file
+     firefox
+     go
+     gum
+     gnupg
+     gparted
+     kitty
+     k3d
+     k9s
+     kustomize
+     kompose
+     kubectl
+     krew
+     kubernetes-helm
+     source-code-pro
+     terminator
+     thefuck
+     timoni
+     velero
+     vscode
     ];
 
   programs = {
@@ -106,14 +128,14 @@ in {
     # FIXME: disable this if you don't want to use the starship prompt
     starship.enable = true;
     starship.settings = {
-      aws.disabled = true;
-      gcloud.disabled = true;
+      aws.disabled = false;
+      gcloud.disabled = false;
       kubernetes.disabled = false;
       git_branch.style = "242";
       directory.style = "blue";
       directory.truncate_to_repo = false;
       directory.truncation_length = 8;
-      python.disabled = true;
+      python.disabled = false;
       ruby.disabled = true;
       hostname.ssh_only = false;
       hostname.style = "bold green";
@@ -141,8 +163,12 @@ in {
         side-by-side = true;
         navigate = true;
       };
-      userEmail = ""; # FIXME: set your git email
-      userName = ""; #FIXME: set your git username
+      userEmail = "klaus.Staudenmaier"; 
+      userName = "Staudenmaier, Klaus"; 
+      aliases = {
+        gst = "status";
+      };
+
       extraConfig = {
         # FIXME: uncomment the next lines if you want to be able to clone private https repos
         # url = {
@@ -165,8 +191,12 @@ in {
         };
       };
     };
-
-    # FIXME: This is my fish config - you can fiddle with it if you want
+    services.gpg-agent = {
+      enable = true;
+      defaultCacheTtl = 1800;
+      enableSshSupport = true;
+    };
+ 
     fish = {
       enable = true;
       # FIXME: run 'scoop install win32yank' on Windows, then add this line with your Windows username to the bottom of interactiveShellInit
