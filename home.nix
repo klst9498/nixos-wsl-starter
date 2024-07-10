@@ -52,12 +52,13 @@
     kubectl
     krew
     kubernetes-helm
+    patchelf
     source-code-pro
     terminator
     thefuck
     timoni
     velero
-    vscode
+#    vscode
 
     # FIXME: customize these stable packages to your liking for the languages that you use
 
@@ -193,13 +194,14 @@ in {
       };
     };
 
-#    services.gpg-agent = {
-#
+#    vscode = {
 #      enable = true;
-#      defaultCacheTtl = 1800;
-#      enableSshSupport = true;
+#      extensions = with pkgs.vscode-extensions; [
+#	vscode-remote-release
+#      ];
 #    };
- 
+
+
     fish = {
       enable = true;
       # FIXME: run 'scoop install win32yank' on Windows, then add this line with your Windows username to the bottom of interactiveShellInit
@@ -232,6 +234,7 @@ in {
       shellAbbrs =
         {
           gc = "nix-collect-garbage --delete-old";
+          code = "/mnt/c/Program\ Files/Microsoft\ VS\ Code/bin/code";
         }
         # navigation shortcuts
         // {
@@ -279,4 +282,12 @@ in {
       ];
     };
   };
+
+#    services.gpg-agent = {
+#
+#      enable = true;
+#      defaultCacheTtl = 1800;
+#      enableSshSupport = true;
+#    };
+ 
 }

@@ -16,6 +16,8 @@
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.jeezyvim.url = "github:LGUG2Z/JeezyVim";
+  inputs.nixos-vscode-server.url ="github:thirusk86/nixos-vscode-ssh-fix/main";
+
 
   outputs = inputs:
     with inputs; let
@@ -89,4 +91,5 @@
         ];
       };
     };
+
 }
